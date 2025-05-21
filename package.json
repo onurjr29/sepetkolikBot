@@ -1,0 +1,22 @@
+{
+  "name": "bot_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.5.0",
+    "mongoose": "^8.15.0",
+    "node-cron": "^4.0.5",
+    "nodemailer": "^7.0.3",
+    "p-limit": "^6.2.0"
+  }
+}
