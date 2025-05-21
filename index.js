@@ -127,6 +127,8 @@ function mapProduct(p, anaKat, altKat, kat) {
     slug:        slugify(`${p.name}-${p.id}`),
     url:         `https://www.trendyol.com${p.url}`,
     images:      (p.images||[]).map(absUrl),
+    brand: p.brand?.name || null,
+    
     // Variants içinden tüm varyant bilgilerini alıyoruz
     variantInformation: p.variants?.map(v => ({
       listingId:           v.listingId,
@@ -194,7 +196,7 @@ async function fetchCategory(cat) {
       if (err.response?.status === 404) {
         console.warn(`  ⚠️ ${cat.kat} sayfa ${page} bulunamadı, atlanıyor.`);
         break;  // 404 ise atla, bir sonraki sayfayı dene
-      }
+      } 
       throw err;  // başka bir hata varsa fırlat
     }
   }
