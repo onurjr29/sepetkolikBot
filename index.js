@@ -90,6 +90,9 @@ function mapProduct(p, anaKat, altKat, kat) {
     slug:         slugify(`${p.name}-${p.id}`),
     url:          `https://www.trendyol.com${p.url}`,
     brand:        p.brand?.name || "",
+
+     image_url:    absUrl(p.images?.[0] || p.defaultImageUrl || ""),
+
     variant_information: JSON.stringify(
       (p.variants || []).map(v => ({
         listingId:           v.listingId,
@@ -130,7 +133,7 @@ async function fetchCategory(cat) {
   const out = [];
   const genderId = cat.anaKat.includes("ERKEK") ? 2 : 1;
 
-  for (let page = 1; page <= 2; page++) {
+  for (let page = 1; page <= 1; page++) {
     console.log(`📥 Fetching category “${cat.kat}” — page ${page}`);  // ← log page here
 
     const url =
